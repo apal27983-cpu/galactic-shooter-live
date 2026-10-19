@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="STARFALL: SPACE DEFENDER - a browser arcade space shooter built with HTML5 Canvas.">
+<title>STARFALL: SPACE DEFENDER</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-root">
+  <canvas id="game-canvas"></canvas>
+
+  <button id="mute-button" class="chip-button" type="button" aria-label="Toggle sound">SOUND <span id="mute-state">ON</span></button>
+
+  <!-- ===== MAIN MENU ===== -->
+  <section id="menu-overlay" class="overlay" aria-label="Main menu">
+    <div class="panel">
+      <p class="eyebrow">Arcade Protocol &bull; Sector 7</p>
+      <h1 class="title">STARFALL</h1>
+      <p class="subtitle">Space Defender</p>
+      <p class="blurb">The outer colonies are under siege. Hold the line.</p>
+      <button id="start-button" class="btn btn-primary" type="button">START GAME</button>
+
+      <div class="controls">
+        <h2 class="controls-head">Controls</h2>
+        <ul class="controls-list">
+          <li><span class="keys"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span><span>Fly your ship</span></li>
+          <li><span class="keys"><kbd class="wide">Space</kbd></span><span>Fire blasters (hold)</span></li>
+          <li><span class="keys"><kbd>P</kbd><kbd class="wide">Esc</kbd></span><span>Pause / resume</span></li>
+          <li><span class="keys"><kbd class="wide">Enter</kbd></span><span>Start / restart</span></li>
+          <li><span class="keys"><kbd>M</kbd></span><span>Mute / unmute</span></li>
+        </ul>
+      </div>
+
+      <p class="hint">Press <kbd class="wide">Enter</kbd> to launch</p>
+    </div>
+  </section>
+
+  <!-- ===== PAUSED ===== -->
+  <section id="pause-overlay" class="overlay hidden" aria-label="Paused">
+    <div class="panel panel-compact">
+      <p class="eyebrow">Systems Idle</p>
+      <h2 class="title title-sm">GAME PAUSED</h2>
+      <div class="button-row">
+        <button id="resume-button" class="btn btn-primary" type="button">RESUME</button>
+        <button id="pause-menu-button" class="btn" type="button">MAIN MENU</button>
+      </div>
+      <p class="hint">Press <kbd>P</kbd> or <kbd class="wide">Esc</kbd> to resume</p>
+    </div>
+  </section>
+
+  <!-- ===== GAME OVER ===== -->
+  <section id="gameover-overlay" class="overlay hidden" aria-label="Game over">
+    <div class="panel panel-compact">
+      <p class="eyebrow danger">Hull Integrity Lost</p>
+      <h2 class="title title-sm danger-text">GAME OVER</h2>
+      <dl class="scoreboard">
+        <div><dt>Final Score</dt><dd id="final-score">000000</dd></div>
+        <div><dt>Best</dt><dd id="best-score">000000</dd></div>
+      </dl>
+      <p id="new-record" class="record hidden">NEW RECORD</p>
+      <div class="button-row">
+        <button id="restart-button" class="btn btn-primary" type="button">RESTART</button>
+        <button id="gameover-menu-button" class="btn" type="button">MAIN MENU</button>
+      </div>
+      <p class="hint">Press <kbd class="wide">Enter</kbd> to fly again</p>
+    </div>
+  </section>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/input.js"></script>
+<script src="js/starfield.js"></script>
+<script src="js/particle.js"></script>
+<script src="js/projectile.js"></script>
+<script src="js/player.js"></script>
+<script src="js/enemy.js"></script>
+<script src="js/powerup.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
